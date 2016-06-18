@@ -43,8 +43,6 @@ function btnOperator (Op)
                 field.value = Operand1 / Operand2;
                 break;
 
-            default:
-                field.value = "Error, reload page!";
         }
         Operand1 = "";
         Operand2 = "";
@@ -73,7 +71,47 @@ function btnC()
     Operator = "";
 }
 
+
 function reverseSign()
 {
     field.value = field.value * -1;
 }
+
+function keyboard(event) {
+    //Обработка цифр
+    if(event.key >= "0" && event.key <= "9") {
+        btnNum(event.key);
+    }
+    //Обработка операторов
+    switch(event.key) {
+        case "+": btnOperator("+");
+            break;
+
+        case "-": btnOperator("-");
+            break;
+
+        case "*": btnOperator("*");
+            break;
+
+        case "/": btnOperator("/");
+            break;
+
+        case "=": btnOperator("=");
+            break;
+
+        case "Enter": btnOperator("=");
+            break;
+
+        case ".": btnDot();
+            break;
+
+        case "c": btnC();    //При нажатии backspase
+            break;
+
+        case "Delete": btnCE();   //При нажатии delete
+            break;
+    }
+    event.stopPropagation();
+}
+
+addEventListener("keydown", keyboard);
