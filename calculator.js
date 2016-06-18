@@ -111,7 +111,19 @@ function keyboard(event) {
         case "Delete": btnCE();   //При нажатии delete
             break;
     }
-    event.stopPropagation();
 }
 
 addEventListener("keydown", keyboard);
+
+
+function showCalculator()
+{
+    if(document.getElementById('calculatorForm').style.display != "none") {
+        document.getElementById('calculatorForm').style.display = "none";
+        document.getElementById('showButton').value = "Показать";
+    }
+    else {
+        document.getElementById('calculatorForm').style.display = "";
+        document.getElementById('showButton').value = "Скрыть";
+    }
+}

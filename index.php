@@ -5,12 +5,12 @@
     <script src="calculator.js" async></script>
 </head>
 <body>
-<form name="Calculator" action="">
+<form id="calculatorForm" style="display: none">
     <table class="tableCalculator" cellpadding=0 cellspacing=0>
         <tr>
             <td colspan=5 align=middle>
                 <input id="mainField" name="mainField" type="Text"
-                       size=28 value="0" width="250px">
+                       value="0">
             </td>
         </tr>
         <tr>
@@ -61,6 +61,6 @@
         </tr>
     </table>
 </form>
-
+<input type="button" id="showButton" value="Показать" onclick="showCalculator()">
 </body>
 </html>
